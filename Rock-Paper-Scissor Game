@@ -1,0 +1,51 @@
+import random
+Pwon = 0
+Cwon = 0
+def rps():
+    x = eval(input("Choose Rock, Paper, Scissor:"))
+    n = random.choice([1,2,3])
+    if x == 3:
+        if n == 2:
+            print("Computer Choose Paper")
+            print("You win")
+            return 1
+        elif n == 3:
+            print("Computer Choose Scissor")
+            print("Its a draw")
+        elif n == 1:
+            print("Computer Choose Rock")
+            print("You lose")
+            return 0
+    if x == 2:
+        if n == 2:
+            print("Computer Choose Paper")
+            print("Its a draw")
+        elif n == 3:
+            print("Computer Choose Scissor")
+            print("You lose")
+            return 0
+        elif n == 1:
+            print("Computer Choose Rock")
+            print("You win")
+            return 1
+    if x == 1:
+        if n == 2:
+            print("Computer Choose Paper")
+            print("You lose")
+            return 0
+        elif n == 3:
+            print("Computer Choose Scissor")
+            print("You win")
+            return 1
+        elif n == 1:
+            print("Computer Choose Rock")
+            print("Its a draw")
+while (Pwon < 3 and Cwon < 3):
+    if(rps()==0):
+        Cwon += 1
+    else:
+        Pwon += 1
+if(Pwon == 2):
+    print("Player won 2 times")
+elif(Cwon == 2):
+    print("Computer Wins 2 times")
