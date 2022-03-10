@@ -1,0 +1,68 @@
+###########Question 3##########
+highestlength = '0'
+currentlength = '0'
+num = input("Enter the sequence of integers:")
+
+for element in num:
+    if(element != ' '):
+        if(element != '0' and element == currentlength[0]):
+            currentlength = currentlength+element
+        elif(element !='0' and element != currentlength[0]):
+            currentlength = element
+        elif(element == '0'):
+            break
+        if(len(currentlength) > len(highestlength)):
+            highestlength = currentlength
+print(highestlength[0],"is repeated maximum times i.e.", len(highestlength))
+
+
+
+
+
+##########Question number 4##########
+num = input("Enter the sequence of numbers:")
+listofnum =[]
+NRList = []
+eachnum = ''
+for element in num:
+    if(element != ' '):
+        eachnum+=element
+    else:
+        listofnum.append(int(eachnum))
+        eachnum = ''
+listofnum.append(int(eachnum))
+####repect check###
+for i in listofnum:
+    d = 0
+    for j in listofnum:
+        if(i == j):
+            d+=1
+    if(d==1):
+        NRList.append(i)
+#####print#########3
+for i in NRList:
+    print(i, end = ' ')
+    
+    
+    
+    
+##################Question 5##############
+small = 0
+cap = 0
+number = 0
+sp = 0
+password = input("Enter a password:")
+for i in password:
+    ####ssmall check#####
+    if i >= 'a' and i <= 'z':
+        small = 1
+    elif i >= 'A' and i <= 'Z':
+        cap = 1
+    elif i >= '0' and i <= '9':
+        number = 1
+    elif i == '$' or i == '#' or i == '@':
+        sp = 1
+if(len(password)<= 16 and len(password)>= 6 and small == 1 and cap == 1 and number == 1 and sp ==1):
+    print("Password is valid")
+else:
+    print("Password is not valid")
