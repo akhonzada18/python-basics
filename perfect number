@@ -1,0 +1,10 @@
+num = int(input("Enter the number : "))
+result = 0
+
+for x in range (1,num):
+    if (num % x) == 0 :
+        result = result + x
+if result == num :
+    print(num, "is a perfect number.")
+else:
+    print(num, "is not a perfect number.")   
